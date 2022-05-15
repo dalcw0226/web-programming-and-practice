@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform:scale()</title>
+    <script>
+        let i = 2;
+        function trans(){
+            let ele = document.querySelector("img");
+            ele.style.transform = `scale(${i}, 1)`;
+            i++;
+        }
+    </script>
+</head>
+<body>
+    <h2>클릭하면 2,3,4배로 옆으로 늘어납니다.</h2>
+    <hr>
+    <img src="https://mblogthumb-phinf.pstatic.net/MjAxOTEwMjdfMzIg/MDAxNTcyMTQzMDk1MzIy.vmE4PCbENLckM1qDsOc0gXKV2R2uyVAIPIsLT-YayKEg.YTzw2hKln4nijfDEp3Y5Y22h5kLsBWkexI9UU6d5XMIg.PNG.yunam69/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5.png?type=w800" alt="" onclick="trans()" width="200px">
+</body>
+</html>
