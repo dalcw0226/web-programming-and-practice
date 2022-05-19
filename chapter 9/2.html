@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오 버튼과 이미지 출력</title>
+    <script>
+        // 교재를 참고하여 구현한 코드와 그냥 간단하게 짜본 코드로 2개 만들어보았습니다.
+
+        // function click_radio(){
+        //     let IMG = document.getElementById("img");
+        //     let fruits = document.getElementsByName("fruits");
+        //     for(let i = 0; i<fruits.length; i++){
+        //         if(fruits[i].checked){
+        //             IMG.src = fruits[i].value;
+        //             break;
+        //         }
+        //     }
+        // }
+
+        function click_radio(obj){
+            let img = document.querySelector("img");
+            img.src = obj.value;
+        }
+    </script>
+</head>
+<body>
+    <h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3>
+    <hr>
+    <form>
+        <input type="radio" name="fruits" value="https://w.namu.la/s/ad82490f925219c809bc9122a312ed9642a405442e777fbf26403afc1e0edd0c7eae47db5f5ebdabc1c198b5ff19d2383e5472eefb3048c0dd341d833b1d90489bc1dcd10e3dd5a0b3dacde703a6d8e98f669ad352d8d3b47cae07f772bdf30580363597f46d3f602a5f18b4e0b81a6c" checked onclick="click_radio(this);">바나나
+        <input type="radio" name="fruits" value="https://w.namu.la/s/82677ae962b160d16b2ed2edab9add1585812879a473652aeff3d5edde27bf6d1d01b871c31ae8a5cfd68540cb1a376bac5b7b397935e9f20f25cba5a30523337d2510789b9d65eb8e3b79e0b1ef9b80ac54001b54a75f90b08db0a5fdbb027429f5e71e1ed6875dd3452948dd219ea2" onclick="click_radio(this);">망고
+        <input type="radio" name="fruits" value="https://w.namu.la/s/96f05e961ab1169f6f0ef41902388df4832baabd91f44e79ad4b83a2eb53439831f02378ce10fe4073f627f25ac31fcfe3de93161fc5d171902c77b9159aa9171609f6218acc0218904d5fd66be1c57aedcdefb9e248fad09e74515491135b722030b0f6c3e9e536b693e95bd590dd98" onclick="click_radio(this);">사과
+    </form>
+
+    <img id="img" src="https://w.namu.la/s/ad82490f925219c809bc9122a312ed9642a405442e777fbf26403afc1e0edd0c7eae47db5f5ebdabc1c198b5ff19d2383e5472eefb3048c0dd341d833b1d90489bc1dcd10e3dd5a0b3dacde703a6d8e98f669ad352d8d3b47cae07f772bdf30580363597f46d3f602a5f18b4e0b81a6c" alt="img" width="200px">
+</body>
+</html> 

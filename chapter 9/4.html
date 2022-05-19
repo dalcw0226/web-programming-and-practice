@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onmousemove</title>
+    <style>
+        img{
+            position:absolute;
+        }
+    </style>
+    <script>
+        window.onmousemove = mousemove;
+
+        function mousemove(e){
+            let trace_img = document.getElementById("img");
+            trace_img.style.top = e.clientY + "px";
+            trace_img.style.left = e.clientX + "px";
+        }
+    </script>
+</head>
+<body>
+    <h3>이미지 커서 만들기</h3>
+    <hr>
+    <p>마우스를 움직이면 이미지로 만든 커서가 마우스를 따라 다닙니다.</p>
+    <img id="img" src="Spongebob.jpeg" 
+        width="30px" height="30px" alt="스폰지밥">
+</body>
+</html>

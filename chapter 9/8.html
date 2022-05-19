@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 객체의 target</title>
+    <script>
+        li_list = document.getElementsByTagName("li");
+        li_cnt = [0,0,0,0];
+        
+        function change_size(obj){
+            li_cnt[obj.id] = 1;
+
+            for(let i = 0; i<li_cnt.length; i++){
+                if(li_cnt[i] == 1){
+                    li_list[i].style.fontSize = "1.3em";
+                }
+                if(li_cnt[i] == 0){
+                    li_list[i].style.fontSize = "1em";
+                }
+                li_cnt[i]=0;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h3>아이템을 클릭하면 1.3배 크기로</h3>
+    <hr>
+    <p>여름 방학 때 하고 싶은 것들</p>
+    <ul>
+        <li id="0" onclick="change_size(this)">자전거로 대한민국 일주</li>
+        <li id="1" onclick="change_size(this)">책 100권 읽기</li>
+        <li id="2" onclick="change_size(this)">철인 3종 경기 준비</li>
+        <li id="3" onclick="change_size(this)">자바스크립트 정복</li>
+    </ul>
+</body>
+</html>

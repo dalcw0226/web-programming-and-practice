@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onwheel</title>
+    <script>
+        let width = 300;
+        function wheel(e, obj){
+            if(e.wheelDelta > 0){
+                width = width * 0.95;
+            }
+            else{
+                width = width * 1.05;
+            }
+            obj.style.width = width + "px";
+        }
+    </script>
+</head>
+<body>
+    <h3>마우스 휠을 이용한 이미지 확대/축소</h3>
+    <hr>
+    <p>이미지 위에 휠을 위로 굴리면 이미지가 축소되고 아래로 굴리면 이미지가 확대됩니다.</p>
+    <img onwheel="wheel(event, this)" id="flower" src="https://w.namu.la/s/d378b496652a3d82da0343db4f827cabdf070b136da4999f4ab9eda8c9d58515bf378d460fde2f3a000eb9518fcad296eeb2a053adea1c44b554b58703bbf41fe487e746abe5560d39175228bd679c42edac6a89256c6f1e9b3f0e199153f267" width="300px" alt="flower"> 
+</body>
+</html>
