@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진과 이름 출력</title>
+</head>
+<body>
+    <h3>사진과 이름 출력</h3>
+    <hr>
+    <canvas style='background-color:aliceblue' width="300" height="100">
+    </canvas>
+    <script>
+        let canvas = document.querySelector('canvas');
+        let context = canvas.getContext("2d");
+        let img = new Image();
+        img.src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20100628_242%2Fdlrudtjr5005_1277726207098DJzn0_jpg%2Fthumbnail_dlrudtjr5005.jpg&type=sc960_832";
+        // context.drawImage(img, 5, 10)
+        img.onload = function(){ 
+            context.drawImage(img, 20, 20, 70, 70);
+            context.fillStyle = "violet";
+            context.strokeStyle = "blue";
+            context.lineWidth = "1.2";
+
+            context.font = "italic 30px forte";
+            context.fillText("Spongebob", 20, 70);
+            context.strokeText("Spongebob", 20, 70);
+            
+        }
+
+
+    </script>
+</body>
+</html>
