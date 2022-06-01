@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산수를 풀어 봅시다</title>
+</head>
+<body onload="init()">
+    <h3>산수 문제를 풀어 봅시다.</h3>
+    <p>문제는 자동으로 생성되며, 10초가 지나면 자동 채점 됩니다.</p>
+    <div id="rest_time"></div>
+    <hr>
+    <table>
+        <tr><td class="problem"></td><td><input class="solve" type="text"></td></tr>
+        <tr><td class="problem"></td><td><input class="solve" type="text"></td></tr>
+        <tr><td class="problem"></td><td><input class="solve" type="text"></td></tr>
+        <tr><td class="problem"></td><td><input class="solve" type="text"></td></tr>
+        <tr><td><input type="button" value="다시" onclick="restart()"></td><td id="correct_num">0</td></tr>
+    </table>
+
+    <script>
+        let timerID;
+
+        function init(){
+            let operator = ["+", "-", "*", "/"];
+            
+            let problem = document.getElementsByClassName("problem")
+            for(let i = 0; i<problem.length; i++){            
+                let number1 = Math.floor(Math.random() * 100);
+                let number2 = Math.floor(Math.random() * 100);
+                problem[i].innerHTML = number1 + operator[Math.floor(Math.random()*4)] + number2;
+            }
+
+            timerID = setInterval(display, 1000);
+        }
+
+        let counter = 10;
+
+        function display(){
+            if(counter == 0){
+                clearInterval(timerID);
+                checking();
+            }
+            rest_time = document.getElementById("rest_time");
+            rest_time.innerHTML = counter;
+            --counter;
+        }
+
+        let correct_num = 0;
+        function checking(){
+            let problems = document.getElementsByClassName("problem");
+            let solve = document.getElementsByClassName("solve");
+
+            for(let i = 0; i<problems.length; i++){
+                if(eval(problems[i].innerHTML) == solve[i].value)
+                    correct_num++;
+                else
+                    problems[i].style.textDecoration = "line-through";
+            }
+
+            let correct_num_insert = document.getElementById("correct_num");
+            correct_num_insert.innerHTML = correct_num;
+        }
+
+        function restart(){
+            location.reload();
+        }
+    </script>
+</body>
+</html>
