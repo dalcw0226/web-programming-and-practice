@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init(){
+            let book = {
+                title : "HTML5",
+                author : "황기태",
+                price : 20000
+            };
+            let p = document.getElementById("insert");
+            p.innerHTML = `book : ${book.title}, ${book.author}, ${book.price}`;
+        }
+        window.onload = init;
+    </script>
+</head>
+<body>
+    <h3>book 객체 만들기</h3>
+    <hr>
+    <p id="insert"></p>
+</body>
+</html>

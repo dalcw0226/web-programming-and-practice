@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>일요일은 pink, 다른 요일은 gold 배경</h3>
+    <hr>
+    <p>오늘 : <span id="today"></span></p>
+    <script>
+        let now = new Date();
+        let day = ['일', '월', '화', '수', '목', '금', '토'];
+        let day_num = now.getDay();
+        let date = now.getDate();
+
+        let today = document.getElementById(`${date}, ${day[day_num]}요일`);
+        document.getElementById("today").innerHTML = today;
+    </script>
+</body>
+</html>
