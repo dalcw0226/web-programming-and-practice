@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>mousedownrhk mouseup으로 선 그리기</h3>
+    <hr>
+    <canvas width="300" height="200" style="background-color:aliceblue" id="canvas"></canvas>
+    
+    <script>
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+        let startX_, startY_;
+        let startX, startY;
+        let dragging = false;
+        canvas.onmousedown = function(e){
+            dragging = true;
+            ctx.beginPath();
+            startX = e.offsetX;
+            startY = e.offsetY;
+            startX_ = startX_;
+            startY_ = startY_;
+            ctx.moveTo(startX, startY);
+        }
+        canvas.onmouseup = function(e){
+            dragging = false;
+            drawLine();
+        }
+        canvas.onmousemove = function(e){
+            if(dragging == false) return;
+            let x = e.offsetX;
+            let y = e.offsetY;
+            
+            move(x, y);
+
+            startX = x;
+            startY = y;
+        }
+
+        function move(x, y){
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+        }
+
+        function drawLine(){
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(startX_, startY_);
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>
